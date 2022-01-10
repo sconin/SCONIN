@@ -19,6 +19,7 @@ body{
   background: none;/*var(--secondary);*/
   overflow-x: hidden;
   font-family: 'Montserrat', sans-serif;
+  font-style: bold;
 }
 .button{
   background: none;
