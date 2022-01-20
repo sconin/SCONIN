@@ -94,7 +94,7 @@ hr{
   box-sizing: border-box;
 }
 .site-nav{
-  
+  display: none;
   background-color: var(--secondary);
   width: 100%; 
 }
@@ -150,9 +150,10 @@ hr{
 
 #welcome{
   padding: 0px;
-  position: sticky;
+  /*position: sticky;*/
   top: 0px;
   z-index: -1;
+  background-color: #000000;
 }
 .welcome-text{
   grid-column: 1/6;
@@ -169,7 +170,6 @@ hr{
 
 #portfolio{
   padding: 30px 20px;
-  margin-top: 500px;
 }
 #portfolio h3{
   margin-bottom: 0;
@@ -191,7 +191,7 @@ hr{
   align-self: center;
   max-width: 100%;
   min-width: 110px ;
-  border-radius: 95%;
+  border-radius: 5%;
 }
 
 .projects a div{
@@ -301,6 +301,13 @@ footer img{
   width: 20px;
 }
 
+#triangles {
+  background-color:black;
+  background-image: url(assets/triangle.svg);
+  background-repeat: repeat-x;
+  background-size: 2.5rem;
+  height: 2rem;
+}
 
 /* small tablet styles */
 @media screen and (min-width: 620px){
