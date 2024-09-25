@@ -5,8 +5,8 @@ let camera;
 let scene = new THREE.Scene();
 camera = new THREE.PerspectiveCamera(54, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-renderer = new THREE.WebGLRenderer({
-});
+renderer = new THREE.WebGLRenderer({});
+
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(new THREE.Color(0xfefefe));
 

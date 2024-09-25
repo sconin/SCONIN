@@ -1,0 +1,19 @@
+{
+  "name": "sconin",
+  "version": "1.0.0",
+  "description": "Sconin and Personal Portafolio Page",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.4.7"
+  },
+  "dependencies": {
+    "three": "^0.168.0"
+  }
+}
