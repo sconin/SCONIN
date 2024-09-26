@@ -1,59 +1,97 @@
 import * as THREE from 'three';
-let renderer;
-let camera;
 
-let scene = new THREE.Scene();
-camera = new THREE.PerspectiveCamera(54, window.innerWidth / window.innerHeight, 0.1, 1000);
+const vshader = `
+    void main(){
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }
+`
 
-renderer = new THREE.WebGLRenderer({});
+const fshader = `
+    uniform vec3 u_color; 
+    uniform vec2 u_mouse;
+    uniform vec2 u_resolution;
+    uniform float u_time;
+    void main()
+    {
+        //vec2 v = u_mouse/u_resolution;
+        //vec3 color = vec3(v.x, 0.0, v.y);
+        vec3 color = vec3( sin(u_time + 1.0)/2.0 , 0.0, cos(u_time + 1.0)/2.0);
+        gl_FragColor = vec4(color, 1.0);
+    }
+`
 
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setClearColor(new THREE.Color(0xfefefe));
+const scene = new THREE.Scene();
+const camera = new THREE.OrthographicCamera(-1,1,1,-1,0.1,10);
 
-window.onload = function(){
-    let canvas = document.getElementById("welcome");
-    canvas.appendChild(renderer.domElement);
-    
-  
-        camera.position.x = 0.0;
-        camera.position.y = 4.0 - window.scrollY / 250.0;
-        camera.position.z = 2.0 - window.scrollY / 250.0;
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize( window.innerWidth, window.innerHeight);
+document.body.appendChild( renderer.domElement );
 
-  
-    
-    camera.lookAt(0, 0, 0);
-   
-};
+const geometry = new THREE.PlaneGeometry(2,2);
+const clock = new THREE.Clock();
 
-// white spotlight shining from the side, casting a shadow
-let spotLight = new THREE.SpotLight(0xffffff, 10, 25, Math.PI / 4);
-spotLight.position.set(9, 10, 1);
-scene.add(spotLight);
+const uniforms = {
+    u_time : { value: 0.0 },
+    u_color: { value: new THREE.Color(0x8287c4)},
+    u_mouse: { value: {x: 0.0, y: 0.0} },
+    u_resolution: { value: { x: 0, y: 0 } }
+}
 
-
-
-let gridHelper = new THREE.GridHelper(4, 4);
-scene.add(gridHelper);
-
-// example code
-const geometry = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshLambertMaterial({
-    color: 0xff0000
+const material = new THREE.ShaderMaterial({
+    uniforms: uniforms,
+    fragmentShader: fshader,
+    vertexShader: vshader
 });
-const topBox = new THREE.Mesh(geometry, material);
-scene.add(topBox);
 
-const light = new THREE.PointLight( 0xff0000, 1, 100 );
-light.position.set( 1, 1, 1 );
-scene.add( light );
+const plane = new THREE.Mesh( geometry, material );
+scene.add(plane);
 
-///// end of example
-let animate = function() {
-    requestAnimationFrame(animate);
-    renderer.render(scene, camera);
-};
+camera.position.z = 1;
 
+onWindowResize();
+if ('ontouchstart' in window){
+    document.addEventListener('touchmove', move)
+}else{
+    
+    window.addEventListener('resize', onWindowResize, false);
+    document.addEventListener('mousemove', move);
+}
 
 
 animate();
+
+function onWindowResize(){
+    const aspectRatio = window.innerWidth / window.innerHeight;
+
+    let width, height;
+    if (aspectRatio >= 1){
+        width = 1;
+        height = (window.innerHeight / window.innerWidth)*width;
+    }else{
+        width = aspectRatio;
+        height = 1;
+    }
+    camera.left = -width;
+    camera.right = width;
+    camera.top = height;
+    camera.bottom = -height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    if (uniforms.u_resolution !== undefined){
+        uniforms.u_resolution.value.x = window.innerWidth;
+        uniforms.u_resolution.value.y = window.innerHeight;
+    }
+    
+}
+
+function move(evt){
+    uniforms.u_mouse.value.x = (evt.touches) ? evt.touches[0].clientX : evt.clientX;
+    uniforms.u_mouse.value.y = (evt.touches) ? evt.touches[0].clientY : evt.clientY;
+}
+
+function animate(){
+    requestAnimationFrame( animate );
+    renderer.render( scene, camera);
+    uniforms.u_time.value = clock.getElapsedTime();
+}
 
