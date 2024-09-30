@@ -1,3 +1,7 @@
+body{
+    background-color: bisque;
+}
+
 hr{
     border-style: dashed;
 }
@@ -22,4 +26,16 @@ hr{
 #hero h1{
     text-align: center;
     margin: 0.3rem 0 0 0;
+}
+
+/*Boostrap modif*/
+.carousel-indicators {
+    position: relative;
+}
+
+.carousel-indicators button{
+    background-color: black !important;
+    border-radius: 100%;
+    width: 0.5rem !important;
+    height: 0.5rem !important ; 
 }
