@@ -1,9 +1,20 @@
 body{
-    background-color: bisque;
+    background-color: #ffe4c4;
 }
 
 hr{
-    border-style: dashed;
+    border-top: dashed;
+    border-width: 4px;
+    margin: 0 1.2rem 0 1.2rem;
+    height: 3%;
+}
+
+.styled-btn{
+    border: 0;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    width: 135px;
+    height: 32px;
 }
 
 #viewport{
@@ -11,6 +22,8 @@ hr{
     padding-top: 0%;
     top: 0%;
 }
+
+/* HERO */
 
 #hero{
     position: absolute;
@@ -20,12 +33,103 @@ hr{
     align-items: center;
     justify-content: center;
     width: 100%;
-    /*top: 50px;*/
 }
 
 #hero h1{
     text-align: center;
     margin: 0.3rem 0 0 0;
+    font-size: 1.5rem;
+    padding: 0 2rem 0 2rem;
+}
+
+.triangulos{
+    position: relative;
+    bottom: 25px;
+    /*background-color: blueviolet;*/
+    height: 25px;
+    background-image: url(assets/newTriangle.svg);
+    background-repeat: repeat-x;
+    
+}
+
+/* Medio cambio */
+.medio{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.medio h1{
+    margin-bottom: 4rem;
+}
+
+.medio h2{
+    margin-bottom: 1rem;
+}
+
+.medio button{
+    margin-top: 1rem;
+}
+
+.medio p, .medio h2{
+    padding: 0 1.5rem 0 1.5rem;
+}
+
+/* contact*/
+#contacto{
+    margin: 5rem 0 5.5rem 0;
+    text-align: center;
+    padding: 0 2.2rem 0 2.2rem;   
+}
+
+#contacto form{
+    margin-bottom: 0;
+}
+
+input, textarea{
+    width: 100%;
+    margin-bottom: 0.8rem;
+    border-radius: 15px;
+    max-height: 5%;
+    border: 0;
+    background-color: gainsboro;
+    padding: 0.5rem;
+    color: white;
+}
+
+textarea{
+    margin-bottom: 2rem;
+    min-height: 30%;
+}
+
+input::placeholder,
+textarea::placeholder{
+    color: white;
+}
+
+/*Footer*/
+footer{
+    background-color: black;
+    text-align: center;
+    padding: 3rem;
+}
+
+footer p{
+    margin: 2.5rem 0 0 0;
+    font-size: 0.8rem;
+}
+
+footer div ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+}
+
+footer img{
+    width: 30px;
+    height: 30px;
 }
 
 /*Boostrap modif*/
