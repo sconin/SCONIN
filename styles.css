@@ -38,8 +38,14 @@ hr{
 #hero h1{
     text-align: center;
     margin: 0.3rem 0 0 0;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 0 2rem 0 2rem;
+}
+
+#hero img{
+    background-color: aqua;
+    width: 70%;
+    max-width: 360px;
 }
 
 .triangulos{
@@ -49,7 +55,6 @@ hr{
     height: 25px;
     background-image: url(assets/newTriangle.svg);
     background-repeat: repeat-x;
-    
 }
 
 /* Medio cambio */
@@ -130,6 +135,13 @@ footer div ul{
 footer img{
     width: 30px;
     height: 30px;
+}
+
+#triangulosNegros{
+    height: 25px;
+    background-image: url(assets/blackTrinagle.svg);
+    background-repeat: repeat-x;
+    width: 100%;
 }
 
 /*Boostrap modif*/
