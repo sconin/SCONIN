@@ -3,8 +3,7 @@ name: Deploy Vite to GitHub Pages
 on:
   push:
     branches:
-      - main    # Tu rama principal
-      - arch-vite-app # La rama en la que estás trabajando
+      - fix-vite-dist
 
 jobs:
   build:
