@@ -110,6 +110,8 @@ textarea{
 @media (min-width: 768px) {
     form{
         width: 50%;
+        display: block;
+        margin: 0 auto;
     }
   }
 
