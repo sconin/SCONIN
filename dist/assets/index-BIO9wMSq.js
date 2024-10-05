@@ -3857,8 +3857,22 @@ void main() {
 
     void main()
     {
-        float inCircle = 1.0 - step(0.5, length(v_position.xy));
-        vec3 color = vec3(1.0,0.5,1.0)*inCircle;
-        gl_FragColor = vec4(color, 1.0);
+        // Coordenadas UV ajustadas para que el centro sea (0, 0)
+		vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+		uv -= 0.5;
+		uv.x *= u_resolution.x / u_resolution.y;
+
+		// Distancia del centro
+		float dist = length(uv);
+
+		// Modifica el valor para crear círculos repetidos
+		float rings = mod(dist * 6.0 - u_time * 0.5, 1.0);
+
+		// Crea un borde para los círculos
+		float border = smoothstep(0.35, 0.35, rings);
+
+		// Colorea los círculos (negro sobre blanco)
+		vec3 color = vec3(1.0,0.0,1.0) - border*0.5;
+		gl_FragColor = vec4(color, 1.0);
     }
 `,hi={u_time:{value:0},u_color:{value:new We(8554436)},u_resolution:{value:{x:0,y:0}}},Nd=new Zt({uniforms:hi,fragmentShader:Id,vertexShader:Ud});let an,xs,fi,mo;function Fd(){xs=new Ld,an=new lo(-1,1,1,-1,.1,10),fi=new Pd,fi.setSize(window.innerWidth,window.innerHeight),document.getElementById("viewport").appendChild(fi.domElement);const e=new xi(2,2);mo=new Dd;const t=new Ft(e,Nd);xs.add(t),an.position.z=1}function _o(){const i=window.innerWidth/window.innerHeight;let e,t;i>=1?(e=1,t=window.innerHeight/window.innerWidth*e):(e=i,t=1),an.left=-e,an.right=e,an.top=t,an.bottom=-t,an.updateProjectionMatrix(),fi.setSize(window.innerWidth,window.innerHeight),hi.u_resolution!==void 0&&(hi.u_resolution.value.x=window.innerWidth,hi.u_resolution.value.y=window.innerHeight)}function go(){requestAnimationFrame(go),fi.render(xs,an),hi.u_time.value=mo.getElapsedTime()}function Ia(i,e){return new Promise((t,n)=>{fetch(i).then(r=>{if(!r.ok)throw new Error(`Http error! Status: ${r.status}`);return r.text()}).then(r=>{document.getElementById(e).innerHTML=r,t()}).catch(r=>n(r))})}Ia("./views/courruselEliab.html","carruselEliab").then(()=>{Ia("./views/carolseProtecor.html","carruselProtector")});Fd();_o();window.addEventListener("resize",_o,!1);let Od=document.getElementById("viewport"),Bd=document.getElementById("hero"),zd=getComputedStyle(Od).height,Hd=parseFloat(zd),Gd=Hd/2-30;Bd.style.top=`${Gd}px`;go();
