@@ -53,7 +53,7 @@ hr{
     bottom: 25px;
     /*background-color: blueviolet;*/
     height: 25px;
-    background-image: url(assets/newTriangle.svg);
+    background-image: url(../newTriangle.svg);
     background-repeat: repeat-x;
 }
 
@@ -147,7 +147,7 @@ footer img{
 
 #triangulosNegros{
     height: 25px;
-    background-image: url(assets/blackTrinagle.svg);
+    background-image: url(../blackTrinagle.svg);
     background-repeat: repeat-x;
     width: 100%;
 }
