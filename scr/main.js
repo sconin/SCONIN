@@ -11,14 +11,18 @@ window.addEventListener('resize', onWindowResize, false);
 
 let viewport = document.getElementById('viewport');
 let hero = document.getElementById('hero');
+centerHeroTitle();
 
-let v = getComputedStyle(viewport).height;
-let viewportValue = parseFloat(v);
-
-let halfHeight = (viewportValue/2) - 30.0;
-
-hero.style.top = `${halfHeight}px`;
+window.addEventListener('resiza', centerHeroTitle, false);
 
 animate();
 
+function centerHeroTitle(){
+    let v = getComputedStyle(viewport).height;
+    let viewportValue = parseFloat(v);
 
+    let halfHeight = (viewportValue/2) - 30.0;
+
+    hero.style.top = `${halfHeight}px`
+    hero.style.width = "100%"
+}

@@ -5,7 +5,7 @@ body{
 hr{
     border-top: dashed;
     border-width: 4px;
-    margin: 0 1.2rem 0 1.2rem;
+    margin: 0;
     height: 3%;
 }
 
@@ -32,7 +32,6 @@ hr{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
 }
 
 #hero h1{
@@ -50,14 +49,14 @@ hr{
 
 .triangulos{
     position: relative;
-    bottom: 25px;
+    bottom: 16px;
     /*background-color: blueviolet;*/
-    height: 25px;
+    height: 16px;
     background-image: url(../newTriangle.svg);
     background-repeat: repeat-x;
 }
 
-/* Medio cambio */
+/* Medio(video juego comic) cambio */
 .medio{
     margin-top: 5rem;
     margin-bottom: 5rem;
@@ -79,6 +78,33 @@ hr{
 .medio p, .medio h2{
     padding: 0 1.5rem 0 1.5rem;
 }
+
+/* carrules */
+
+.miniGalery{
+    visibility: hidden;
+    height: 0%;
+}
+
+@media (min-width: 768px) {
+    .carousel{
+        visibility: collapse;
+        height: 0%;
+    }
+    
+    .miniGalery{
+        visibility: visible;
+        height: auto;
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+    .miniGalery img{
+        width: 25%;
+    }
+}
+
 
 /* contact*/
 #contacto{
@@ -113,7 +139,9 @@ textarea{
         display: block;
         margin: 0 auto;
     }
-  }
+
+
+}
 
 input::placeholder,
 textarea::placeholder{
@@ -132,7 +160,7 @@ footer p{
     font-size: 0.8rem;
 }
 
-footer div ul{
+footer div div{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -146,7 +174,7 @@ footer img{
 }
 
 #triangulosNegros{
-    height: 25px;
+    height: 16px;
     background-image: url(../blackTrinagle.svg);
     background-repeat: repeat-x;
     width: 100%;
@@ -162,6 +190,14 @@ footer img{
     border-radius: 100%;
     width: 0.5rem !important;
     height: 0.5rem !important ; 
+}
+
+.carousel-indicators [data-bs-target] {
+    opacity: 0.20 !important; /* Aplica opacidad a todos los indicadores */
+}
+
+.carousel-indicators .active {
+    opacity: 1 !important; /* Asegura que el indicador activo tenga opacidad completa */
 }
 
 .carousel img{

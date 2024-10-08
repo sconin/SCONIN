@@ -12,12 +12,8 @@ const vshader = `
 `
 
 const fshader = `
-    uniform vec3 u_color; 
     uniform vec2 u_resolution;
     uniform float u_time;
-    
-    varying vec2 v_uv;
-    varying vec3 v_position;
 
     void main()
     {
@@ -31,7 +27,7 @@ const fshader = `
     float dist = length(uv);
 
     // Modifica el valor para crear círculos repetidos
-    float rings = mod(dist * 6.0 - u_time * 0.5, 1.0);
+    float rings = mod(dist * 6.0 - u_time*0.5 , 0.75);
 
     // Crea un borde para los círculos
     float border = smoothstep(0.35, 0.35, rings);
