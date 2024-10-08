@@ -86,6 +86,10 @@ hr{
     height: 0%;
 }
 
+.miniGalery img{
+    width: 25%;
+}
+
 @media (min-width: 768px) {
     .carousel{
         visibility: collapse;
@@ -99,9 +103,6 @@ hr{
         gap: 30px;
         justify-content: center;
         margin-bottom: 2rem;
-    }
-    .miniGalery img{
-        width: 25%;
     }
 }
 
