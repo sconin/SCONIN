@@ -2,8 +2,7 @@ import { createViewport, onWindowResize, animate } from "./js/viewport";
 import { loadHTML } from "./js/loader";
 
 //Carrusel load
-loadHTML("./views/courruselEliab.html","carruselEliab")
-.then(()=>{ loadHTML("./views/carolseProtecor.html","carruselProtector")});    
+initializeCarousel();
 
 createViewport();
 onWindowResize();
@@ -25,4 +24,25 @@ function centerHeroTitle(){
 
     hero.style.top = `${halfHeight}px`
     hero.style.width = "100%"
+}
+
+async function loadConfigureCarousel(htmlPath, elementId, carouselSelector, options) {
+    await loadHTML(htmlPath, elementId);
+    const carouselElement  = document.querySelector(carouselSelector);
+    new bootstrap.Carousel(carouselElement, options);
+}
+
+async function initializeCarousel() {
+    try {
+        await loadConfigureCarousel("./views/courruselEliab.html", "carruselEliab","#carouselEliabIndicators", {
+            interval: 2000,
+            touche: true
+        });
+        await loadConfigureCarousel("./views/carolseProtecor.html", "carruselProtector","#carouselProtectorIndicators", {
+            interval: 2000,
+            touche: true
+        });
+    } catch (error) {
+        console.error("Error al cargar y configurar los carruseles:", error);
+    }
 }
