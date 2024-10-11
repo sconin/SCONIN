@@ -4,17 +4,28 @@ import { loadHTML } from "./js/loader";
 //Carrusel load
 initializeCarousel();
 
+//shader and hero sizes
+
+
 createViewport();
 onWindowResize();
+
 window.addEventListener('resize', onWindowResize, false);
 
 let viewport = document.getElementById('viewport');
 let hero = document.getElementById('hero');
-centerHeroTitle();
 
-window.addEventListener('resiza', centerHeroTitle, false);
+centerHeroTitle();
+window.addEventListener('resize', centerHeroTitle, false);
+
+
+window.addEventListener('resize', ()=>{
+    console.log(document.getElementById("hero").offsetWidth + " hero width");
+    console.log(window.innerWidth + " width");
+});
 
 animate();
+
 
 function centerHeroTitle(){
     let v = getComputedStyle(viewport).height;
