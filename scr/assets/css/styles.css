@@ -55,6 +55,7 @@ hr{
     height: 16px;
     background-image: url(../newTriangle.svg);
     background-repeat: repeat-x;
+    background-position: -16px ;
 }
 
 /* Medio(video juego comic) cambio */
@@ -180,6 +181,7 @@ footer img{
     background-image: url(../blackTrinagle.svg);
     background-repeat: repeat-x;
     width: 100%;
+    background-position: -16px ;
 }
 
 /*Boostrap modif*/
