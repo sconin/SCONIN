@@ -5,12 +5,17 @@ let camera;
 let scene;
 let renderer;
 let clock;
+let heroWidth;
 
 export function createViewport(){
     scene = new THREE.Scene();
     camera = new THREE.OrthographicCamera(-1,1,1,-1,0.1,10);
 
     renderer = new THREE.WebGLRenderer();
+    
+    //new logic 
+    heroWidth = document.getElementById("hero").offsetWidth;
+
     renderer.setSize( window.innerWidth, window.innerHeight);
 
     let welcome = document.getElementById('viewport');
@@ -42,7 +47,9 @@ export function onWindowResize(){
     camera.bottom = -height;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    
+    renderer.domElement.style.width = "100%";
+    renderer.domElement.style.height = "100%";
+
     if (uniforms.u_resolution !== undefined){
         uniforms.u_resolution.value.x = window.innerWidth;
         uniforms.u_resolution.value.y = window.innerHeight;

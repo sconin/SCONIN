@@ -5,8 +5,6 @@ import { loadHTML } from "./js/loader";
 initializeCarousel();
 
 //shader and hero sizes
-
-
 createViewport();
 onWindowResize();
 
@@ -18,14 +16,11 @@ let hero = document.getElementById('hero');
 centerHeroTitle();
 window.addEventListener('resize', centerHeroTitle, false);
 
-
-window.addEventListener('resize', ()=>{
-    console.log(document.getElementById("hero").offsetWidth + " hero width");
-    console.log(window.innerWidth + " width");
+window.addEventListener('deviceorientation', ()=>{
+    console.log("Orientation change");
 });
 
 animate();
-
 
 function centerHeroTitle(){
     let v = getComputedStyle(viewport).height;

@@ -52,7 +52,6 @@ hr{
 .triangulos{
     position: relative;
     bottom: 16px;
-    /*background-color: blueviolet;*/
     height: 16px;
     background-image: url(../newTriangle.svg);
     background-repeat: repeat-x;
