@@ -1,12 +1,22 @@
 body{
-    background-color: #ffe4c4;
+    font-family: "Urbanist", sans-serif;;
+}
+
+h1{
+    color: #8429ff;
+}
+
+h1, h2{
+    font-weight: 800;
 }
 
 hr{
     border-top: dashed;
     border-width: 4px;
     margin: 0;
-    height: 3%;
+    height:0%;
+    border-color: #8429ff;
+    opacity: 100%;
 }
 
 .styled-btn{
@@ -37,9 +47,11 @@ hr{
 
 #hero h1{
     text-align: center;
+    text-shadow: black 1px 2px;
     margin: 0.3rem 0 0 0;
     font-size: 1.2rem;
     padding: 0 2rem 0 2rem;
+    color: white;
 }
 
 #hero img{
@@ -69,16 +81,29 @@ hr{
     margin-bottom: 4rem;
 }
 
-.medio h2{
-    margin-bottom: 1rem;
-}
-
 .medio button{
     margin-top: 1rem;
 }
 
 .medio p, .medio h2{
-    padding: 0 1.5rem 0 1.5rem;
+    padding: 0 1.8rem 0 1.8rem;
+    text-align: left;
+}
+
+.medio h2{
+    font-size: 1.3rem;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#comics button.styled-btn{
+    background-color: #00d464;
+    color: white;
+}
+
+#videojuegos button.styled-btn{
+    background-color: #ff2349;
+    color: white;
 }
 
 /* carrules */
@@ -120,6 +145,10 @@ hr{
     margin-bottom: 0;
 }
 
+#contacto p{
+    text-align: left;
+}
+
 input, textarea{
     width: 100%;
     margin-bottom: 0.8rem;
@@ -134,6 +163,11 @@ input, textarea{
 textarea{
     margin-bottom: 2rem;
     min-height: 30%;
+}
+
+#contacto button{
+    background-color: #8429ff;
+    color: white;
 }
 
 @media (min-width: 768px) {
@@ -161,6 +195,7 @@ footer{
 footer p{
     margin: 2.5rem 0 0 0;
     font-size: 0.8rem;
+    color: white;
 }
 
 footer div div{

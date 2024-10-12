@@ -16,10 +16,6 @@ let hero = document.getElementById('hero');
 centerHeroTitle();
 window.addEventListener('resize', centerHeroTitle, false);
 
-window.addEventListener('deviceorientation', ()=>{
-    console.log("Orientation change");
-});
-
 animate();
 
 function centerHeroTitle(){
