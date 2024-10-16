@@ -6,7 +6,11 @@ initializeCarousel();
 
 //shader load
 let previousWidth = window.innerWidth;
-let previousHeight = window.innerHeight;
+
+const viewport = document.getElementById('viewport');
+let hero = document.getElementById('hero');
+
+centerHeroTitle();
 
 document.body.classList.add('no-scroll');
 
@@ -17,58 +21,45 @@ window.addEventListener("load", ()=>{
         if (loading) {
             loading.style.display = 'none';
         }
-        //shaderFix();
+        shaderFitScreen();
+        createViewport();
+        onWindowResize();
+        animate();
     }, 1000);  
 })
 
 //shader and hero sizes
-const shaderFix = ()=>{
+const shaderFitScreen = ()=>{
     
-    let welcomeElement = document.getElementById('viewport');
-    welcomeElement.style.backgroundColor = "black";
-    welcomeElement.style.height = window.visualViewport.height;
-    console.log(window.visualViewport);
-    welcomeElement.style.width = document.documentElement.clientWidth;
-    console.log(welcomeElement.clientHeight, " height")
-
+    viewport.style.height = window.visualViewport.height;
+    viewport.style.width = window.innerWidth;
+    
     centerHeroTitle();
-    
-    //createViewport();
-    //onWindowResize();
 }
 
-document.addEventListener('resize', ()=>{
+window.addEventListener('resize', ()=>{
     const currentWidth = window.innerWidth;
-    const currentHeight = window.innerHeight;
     const isMobileDevice = isMobile();
 
     if (isMobileDevice){
-        //Cambio orientación (horizontal a vertical y viceversa)
-        const orientationChange = 
-            (previousWidth > previousHeight && currentWidth < currentHeight) ||
-            (previousWidth < previousHeight && currentWidth > currentHeight);
-        
         const significanteChange = 
-            currentHeight > previousWidth * 2 || currentWidth < previousHeight / 2;
+            currentWidth > previousWidth || currentWidth < previousWidth;
         
-        if ( orientationChange || significanteChange ){
+        if ( significanteChange ){
             //---> aspect ratio
+            shaderFitScreen();
+            console.log("Fited Movile!!!!")
         }
     } else {
         //-->Aspect ratio
+        shaderFitScreen();
+        console.log("Fited Desktop")
     }
 
     previousWidth = currentWidth;
-    previousHeight =  currentHeight;
+    centerHeroTitle();
+    onWindowResize();
 });
-
-let viewport = document.getElementById('viewport');
-let hero = document.getElementById('hero');
-
-centerHeroTitle();
-window.addEventListener('resize', centerHeroTitle, false);
-
-//animate();
 
 function centerHeroTitle(){
     let v = getComputedStyle(viewport).height;
@@ -80,10 +71,8 @@ function centerHeroTitle(){
     hero.style.width = "100%"
 }
 
-
 function isMobile(){
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
-        window.matchMedia("(max-width: 768px)").matches;
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
 ////

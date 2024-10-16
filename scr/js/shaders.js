@@ -33,7 +33,7 @@ const fshader = `
         float border = smoothstep(0.35, 0.35, rings);
 
         // Colorea los círculos (negro sobre blanco)
-        vec3 color = vec3(0.576, 0.278, 1.0) - border*vec3(0.059, 0.024, 0.0);
+        vec3 color = vec3(0.615, 0.0, 1.0) - border*vec3(0.079, 0.2, 0.0);
         gl_FragColor = vec4(color, 1.0);
         
     }

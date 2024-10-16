@@ -9,7 +9,7 @@ body{
 }
 
 h1{
-    color: #8429ff;
+    color: #9d00ff;
 }
 
 h1, h2{
@@ -21,7 +21,7 @@ hr{
     border-width: 4px;
     margin: 0;
     height:0%;
-    border-color: #8429ff;
+    border-color: #b069db;
     opacity: 100%;
 }
 
@@ -38,16 +38,18 @@ hr{
     padding-top: 0%;
     top: 0%;
 }
+
 /*Loading screen*/
 #loadig-screen{
     z-index: 1000;
     position: absolute;
     width:100vw ;
     height: 100vh;
-    background: #d6dbd8;
+    background: #B133FF;
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 /* HERO */
@@ -72,7 +74,6 @@ hr{
 }
 
 #hero img{
-    background-color: aqua;
     width: 70%;
     max-width: 360px;
     min-width: 224px;
@@ -183,7 +184,7 @@ textarea{
 }
 
 #contacto button{
-    background-color: #8429ff;
+    background-color: #9d00ff;
     color: white;
 }
 
