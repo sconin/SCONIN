@@ -19,22 +19,22 @@ const fshader = `
     {
         
        // Coordenadas UV ajustadas para que el centro sea (0, 0)
-    vec2 uv = gl_FragCoord.xy / u_resolution.xy;
-    uv -= 0.5;
-    uv.x *= u_resolution.x / u_resolution.y;
+        vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+        uv -= 0.5;
+        uv.x *= u_resolution.x / u_resolution.y;
 
-    // Distancia del centro
-    float dist = length(uv);
+        // Distancia del centro
+        float dist = length(uv);
 
-    // Modifica el valor para crear círculos repetidos
-    float rings = mod(dist * 6.0 - u_time*0.5 , 0.75);
+        // Modifica el valor para crear círculos repetidos
+        float rings = mod(dist * 6.0 - u_time*0.5 , 0.75);
 
-    // Crea un borde para los círculos
-    float border = smoothstep(0.35, 0.35, rings);
+        // Crea un borde para los círculos
+        float border = smoothstep(0.35, 0.35, rings);
 
-    // Colorea los círculos (negro sobre blanco)
-    vec3 color = vec3(0.576, 0.278, 1.0) - border*vec3(0.059, 0.024, 0.0);
-    gl_FragColor = vec4(color, 1.0);
+        // Colorea los círculos (negro sobre blanco)
+        vec3 color = vec3(0.576, 0.278, 1.0) - border*vec3(0.059, 0.024, 0.0);
+        gl_FragColor = vec4(color, 1.0);
         
     }
 `

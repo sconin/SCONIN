@@ -5,21 +5,22 @@ let camera;
 let scene;
 let renderer;
 let clock;
-let heroWidth;
+let welcomeElement
 
 export function createViewport(){
     scene = new THREE.Scene();
     camera = new THREE.OrthographicCamera(-1,1,1,-1,0.1,10);
 
     renderer = new THREE.WebGLRenderer();
+
+    welcomeElement = document.getElementById('viewport');
     
-    //new logic 
-    heroWidth = document.getElementById("hero").offsetWidth;
+    welcomeElement.clientHeight = window.innerHeight
 
-    renderer.setSize( window.innerWidth, window.innerHeight);
+    console.log(welcomeElement.clientHeight, " height")
+    renderer.setSize( welcomeElement.clientWidth, welcomeElement.clientHeight);
 
-    let welcome = document.getElementById('viewport');
-    welcome.appendChild(renderer.domElement);
+    welcomeElement.appendChild(renderer.domElement);
 
     const geometry = new THREE.PlaneGeometry(2,2);
     clock = new THREE.Clock();
@@ -31,12 +32,14 @@ export function createViewport(){
 }
 
 export function onWindowResize(){
-    const aspectRatio = window.innerWidth / window.innerHeight;
+    
+    
+    const aspectRatio = welcomeElement.clientWidth / welcomeElement.clientHeight;
 
     let width, height;
     if (aspectRatio >= 1){
         width = 1;
-        height = (window.innerHeight / window.innerWidth)*width;
+        height = (welcomeElement.clientHeight / welcomeElement.clientWidth)*width;
     }else{
         width = aspectRatio;
         height = 1;
@@ -46,13 +49,14 @@ export function onWindowResize(){
     camera.top = height;
     camera.bottom = -height;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    
+    renderer.setSize(welcomeElement.clientWidth, welcomeElement.clientHeight);
     renderer.domElement.style.width = "100%";
     renderer.domElement.style.height = "100%";
 
     if (uniforms.u_resolution !== undefined){
-        uniforms.u_resolution.value.x = window.innerWidth;
-        uniforms.u_resolution.value.y = window.innerHeight;
+        uniforms.u_resolution.value.x = welcomeElement.clientWidth;
+        uniforms.u_resolution.value.y = welcomeElement.clientHeight;
     }
     
 }

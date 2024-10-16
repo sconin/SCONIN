@@ -2,6 +2,12 @@ body{
     font-family: "Urbanist", sans-serif;;
 }
 
+.no-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
 h1{
     color: #8429ff;
 }
@@ -31,6 +37,17 @@ hr{
     z-index: -1;
     padding-top: 0%;
     top: 0%;
+}
+/*Loading screen*/
+#loadig-screen{
+    z-index: 1000;
+    position: absolute;
+    width:100vw ;
+    height: 100vh;
+    background: #d6dbd8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* HERO */
