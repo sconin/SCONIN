@@ -111,7 +111,6 @@ hr{
 .medio h2{
     font-size: 1.3rem;
     text-align: center;
-    white-space: nowrap;
 }
 
 #comics button.styled-btn{
@@ -124,7 +123,7 @@ hr{
     color: white;
 }
 
-/* carrules */
+/* carruseles */
 
 .miniGalery{
     visibility: hidden;
@@ -134,23 +133,6 @@ hr{
 .miniGalery img{
     width: 25%;
 }
-
-@media (min-width: 768px) {
-    .carousel{
-        visibility: collapse;
-        height: 0%;
-    }
-    
-    .miniGalery{
-        visibility: visible;
-        height: auto;
-        display: flex;
-        gap: 30px;
-        justify-content: center;
-        margin-bottom: 2rem;
-    }
-}
-
 
 /* contact*/
 #contacto{
@@ -186,16 +168,6 @@ textarea{
 #contacto button{
     background-color: #9d00ff;
     color: white;
-}
-
-@media (min-width: 768px) {
-    form{
-        width: 50%;
-        display: block;
-        margin: 0 auto;
-    }
-
-
 }
 
 input::placeholder,
@@ -235,6 +207,42 @@ footer img{
     background-repeat: repeat-x;
     width: 100%;
     background-position: -16px ;
+}
+
+/*Dinamic change*/
+
+@media (min-width: 768px) {
+    .medio p {
+        font-size: 1.1rem;
+        text-align: center;
+        padding: 0 3.5rem 0 3.5rem;
+    }
+
+    .carousel{
+        visibility: collapse;
+        height: 0%;
+    }
+    
+    .miniGalery{
+        visibility: visible;
+        height: auto;
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    form{
+        width: 50%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    #contacto p {
+        font-size: 1.1rem;
+        text-align: center;
+        padding: 0 3.5rem 0 3.5rem;
+    }
 }
 
 /*Boostrap modif*/
