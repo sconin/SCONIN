@@ -48,12 +48,10 @@ window.addEventListener('resize', ()=>{
         if ( significanteChange ){
             //---> aspect ratio
             shaderFitScreen();
-            console.log("Fited Movile!!!!")
         }
     } else {
         //-->Aspect ratio
         shaderFitScreen();
-        console.log("Fited Desktop")
     }
 
     previousWidth = currentWidth;

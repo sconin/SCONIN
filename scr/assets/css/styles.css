@@ -111,6 +111,7 @@ hr{
 .medio h2{
     font-size: 1.3rem;
     text-align: center;
+    margin-bottom: 1rem;
 }
 
 #comics button.styled-btn{
@@ -141,12 +142,17 @@ hr{
     padding: 0 2.2rem 0 2.2rem;   
 }
 
+#contacto h1{
+    margin-bottom: 4rem;
+}
+
 #contacto form{
     margin-bottom: 0;
 }
 
 #contacto p{
     text-align: left;
+
 }
 
 input, textarea{
@@ -239,9 +245,10 @@ footer img{
     }
 
     #contacto p {
+        width: 50%;
+        margin: 1.2rem auto;
         font-size: 1.1rem;
         text-align: center;
-        padding: 0 3.5rem 0 3.5rem;
     }
 }
 
