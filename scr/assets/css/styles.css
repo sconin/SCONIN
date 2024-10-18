@@ -262,7 +262,8 @@ footer img{
     background-color: black !important;
     border-radius: 100%;
     width: 0.5rem !important;
-    height: 0.5rem !important ; 
+    height: 0.5rem !important ;
+    margin-top: 0; 
 }
 
 .carousel-indicators [data-bs-target] {
