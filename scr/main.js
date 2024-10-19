@@ -9,38 +9,41 @@ let previousWidth = window.innerWidth;
 
 const viewport = document.getElementById('viewport');
 let hero = document.getElementById('hero');
-
+const isMobileDevice = isMobile();
 centerHeroTitle();
 
 document.body.classList.add('no-scroll');
 
 window.addEventListener("load", ()=>{
     setTimeout(()=>{
+        shaderFitScreen();
+        createViewport();
+        onWindowResize();
+        animate();
         document.body.classList.remove('no-scroll');
         let loading = document.querySelector('#loadig-screen');
         if (loading) {
             loading.style.display = 'none';
         }
-        shaderFitScreen();
-        createViewport();
-        onWindowResize();
-        animate();
     }, 1000);  
 })
 
 //shader and hero sizes
 const shaderFitScreen = ()=>{
     
-    viewport.style.height = window.visualViewport.height;
+    if (!isMobileDevice){
+        viewport.style.height = window.innerHeight-16;
+    }else{
+        viewport.style.height = window.innerHeight;
+    }
+
     viewport.style.width = window.innerWidth;
-    
+
     centerHeroTitle();
 }
 
 window.addEventListener('resize', ()=>{
     const currentWidth = window.innerWidth;
-    const isMobileDevice = isMobile();
-
     if (isMobileDevice){
         const significanteChange = 
             currentWidth > previousWidth || currentWidth < previousWidth;
