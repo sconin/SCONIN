@@ -3,7 +3,7 @@ import { resolve } from "path";
 
 
 export default defineConfig({
-    base: '/SCONIN/',
+    //base: '/SCONIN/',
     root: resolve(__dirname, "scr"),
     build: {
         outDir: "../dist",
