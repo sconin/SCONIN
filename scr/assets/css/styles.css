@@ -1,3 +1,18 @@
+:root{
+    --black-bg: #000000;
+    --white-bg: #eff1f5;
+    
+    --primary-gray: #7a818d;
+    --secondary-gray: #c9ccd1;
+    --terciary-gray: #e0e1e4;
+
+    --primary-blue: #2088df;
+
+/***********************************/
+    --ligth-gray: #dadce0;
+}
+
+
 html{
     scroll-behavior: smooth;
 }
@@ -5,21 +20,13 @@ html{
 body{
     font-family: "Urbanist", sans-serif;
     margin: 0;
-    background-color: #f7f7f7;
+    background-color: var(--white-bg);
 }
 
 .no-scroll {
     overflow: hidden;
     position: fixed;
     width: 100%;
-}
-
-h1{
-    color: #9d00ff;
-}
-
-h1, h2{
-    font-weight: 800;
 }
 
 ul{
@@ -45,7 +52,7 @@ p{
 
 /* HEADER BAR */
 header{
-    background-color: black;
+    background-color: var(--black-bg);
     
     width: 100%;
     
@@ -88,7 +95,7 @@ header > a{
 }
 
 #toogle-menu span{
-    background-color: #6f6f6f;
+    background-color: var(--primary-gray);
     display: block;
     height: 3px;
     width: 25px;
@@ -130,11 +137,12 @@ header > a{
     padding: 0;
     max-height: 0px;
     overflow: hidden;
+    padding-right: 1.5rem;
 }
 
 .visible {
     max-height: 500px;
-    padding: 1rem;
+    padding: 1.5rem;
     right: 10;
 }
 
@@ -144,49 +152,22 @@ header > a{
 
 #nav-menu li{
     margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 #nav-menu li a{
     /*
     color: #dadada;
     */
-    color: #6f6f6f;
+    color: var(--primary-gray);
     text-decoration: none;
     transition: all 0.3s;
 }
 
 #nav-menu li a:hover{
-    color: #FFFFFF;
+    color: var(--white-bg);
 }
 
-/*Botón de Apoyo*/
-
-#apoyoBtn{
-    background-color: #9d00ff;
-    
-    text-decoration: none;
-    border-radius: 45px;
-    display: flex;
-    padding: 0.4rem 1rem;
-    justify-content: flex-end;
-    text-align: center;
-    align-items: center;
-    width: fit-content;
-    margin-left: auto;
-
-    transition: all 0.4s ease;
-}
-
-#apoyoBtn:hover{
-    transform:  scale(1.10);
-}
-
-#apoyoBtn img{
-    width: 1rem;
-    margin: 0;
-    padding: 0;
-    
-}
 
 
 /* LOADING SCREEN */
@@ -196,7 +177,7 @@ header > a{
     position: absolute;
     width:100vw ;
     height: 100vh;
-    background: #B133FF;
+    background: var(--white-bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -204,117 +185,40 @@ header > a{
 
 /* SLIDER CAROUSEL*/
 
-.carousel{
-    overflow: hidden;
-    margin: 0 0 1rem 0;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.slick-track{
-    height: fit-content;
-}
-
-.carousel div img{
-    width: 100vw;
-    margin: auto;
-}
-
-.slick-dots{
-    flex-grow: 1;
-    display: flex;
-    gap: 0.5rem;
-    justify-content: space-between;
-    margin: 0.35rem 1rem;
-    list-style: none;
-}
-.slick-dots li{
-    height: 0.3rem;
+.banner-container{
+    position: relative;
+    display: inline-block;
     width: 100%;
-    background-color: #dadada;
 }
 
-.slick-dots li.slick-active button{
-    width: 0%;
+#banner {
+    width: 100%;
+    height: auto;
     display: block;
 }
 
-.slick-dots li button{
-    width: 0%;
-    height: 100%;
-    color: transparent;
-    border: 0 ;
-    background-color: #9d00ff;
-    padding: 0;
-    display: none;
-    
-}
-
-.slick-arrow{
-    background-color: aqua;
-}
-
-.custom-next,
-.custom-prev{
-    background-color: none;
-    border: none;
-    outline: none;
-    box-shadow: none;
-
-    color: #9d00ff;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    height: 2.5rem;
-    width: 2.5rem;
-
-    background-color: #f5f7f7; 
-    /*
-    border-radius: 50%;
-    */
-
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.custom-prev{
+.banner-container h1{
     position: absolute;
-    z-index: 1;
     top: 50%;
-    transform: translateY(-95%);
-    /*
-    margin-left: 2%;
-    */
-    border-radius: 0 50% 50% 0;
-}
-.custom-prev img{
-    transform: scaleX(-1);
-}
-
-
-.custom-next{
-    position: absolute;
-    
-    left: 100%;
-    
-    transform: translateX(-100%);
-    bottom: 50%;
-    
-    border-radius: 50% 0 0 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 85%;
+    margin: 0;
+    font-size: xx-large;
 }
 
 /* MEDIUM CARDS */
 
 .mediumCard{
     text-align: center;
-    margin: 4rem 1rem 0 1rem;
+    margin: 0rem 1.5rem 0 1.5rem;
 }
+
 .mediumCard h1{
-    margin-bottom: 1rem;
-    color: #6f6f6f;
-    padding: 0.5rem 1rem;
+    margin: 3rem 0rem 1.5rem 0rem;
+    color: var(--primary-gray);
+    padding: 0.5rem 0.0rem;
 }
 
 #cards{
@@ -327,7 +231,7 @@ header > a{
     background-color: white;
     text-decoration: none;
     
-    box-shadow: 0px 4px 0px #c0c0c0;
+    box-shadow: 0px 4px 0px var(--terciary-gray);
     border-radius: 15px;
 
     margin: 0 auto 2rem auto;
@@ -336,7 +240,10 @@ header > a{
     transform: translateY(20px);
     
     max-width: 100%;
+    height: fit-content;
+    
     text-decoration: none;
+    text-align: center;
     /*anim opacity*/
     opacity: 0;
     transition: opacity 0.3s ease-out, transform 0.3s ease-out, box-shadow 0.3s ease;
@@ -349,62 +256,53 @@ header > a{
 }
 
 .card.active:hover{
+    
     transform: translateY(-8px);
-    box-shadow: 0px 12px 3px #c0c0c0;
+    box-shadow: 0px 12px 3px var(--terciary-gray);
+    
+}
+
+.card div:first-of-type img{
+    display: block;
+    width: 100%;
 }
 
 .card h3{
-    margin-bottom: 0.25rem;
-    margin-top: 0.75rem;
+    margin: 0;
+    margin-bottom: 0.5rem;
     font-weight: 800;
     font-size: large;
-    padding: 0 0.75rem;
-    color: rgb(39, 39, 39);
+    color: var(--black-bg)
 }
 
 .cardDiv{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /*
-    */
-    padding: 0 0.75rem;
-    margin-bottom: 0.75rem;
+    padding: 1.25rem;
+    margin: 0;
+    text-align: center;
 }
 
 .cardDiv p{
-    padding: 0;
-    margin: 0;
     font-weight: 700;
     font-size: 0.8rem;
-    color: #6f6f6f;
+    color: var(--primary-gray);
+    text-align: center;
 }
 
-.cardDiv a{
-    font-weight: bolder;
-    font-size: 32px;
-    text-decoration: none;
-    color: #9d00ff;
-}
-
-.cardDiv img{
-    margin: 0;
-    max-width: 23px;
-}
 
 /* REDES  */
 #apoyo{
-    margin: 2.5rem 0 5.5rem 0;
-    background-color: #edd9fa;
-    color: #6f6f6f;
-    font-weight: 600;
     font-size: medium;
-    padding: 1rem 1rem 3rem 1rem;
+    padding: 7.5rem 3rem;
     margin-bottom: 0;
 }
 
 #apoyo h1{
+    
     text-align: center;
+    color: var(--black-bg);
+    font-weight: 600;
+    margin-block: 0 1.5rem;
+    font-size: 1.5rem;
 }
 
 
@@ -424,18 +322,41 @@ header > a{
 
 #apoyo a{
     text-decoration: none;
-    border-left: 2px solid #cc7bfd;
     text-align: center;
+    /*
     padding: 1rem 0.5rem;
-    
+    */
+}
+
+#apoyo img{
+    width: 50%;
+}
+
+#apoyo button{
+    text-decoration: none; /* Quitar subrayado */
+    border: 3px solid var(--black-bg); /* Borde grueso de color gris */
+    color: var(--white-bg); /* Tipografía del mismo color que el borde */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 100px; /* Bordes redondeados opcionales */
+    background-color: var(--black-bg); /* Fondo transparente */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    transition: all 0.3s ease; /* Transición suave para el hover */
+    font-family: "Urbanist", sans-serif;
+    font-weight: 600;
+    font-size: large;
+}
+
+#apoyo button:hover{
+    color: var(--black-bg); /* Cambiar tipografía a blanco */
+    background-color: var(--white-bg); /* Rellenar fondo con el color del borde */
 }
 
 /* FOOTER */
 
 footer{
-    background-color: black;
+    background-color: var(--black-bg);
     text-align: center;
-    padding: 1.35rem 1rem;
+    padding: 1.35rem 1.5rem;
    
     display: flex;
     justify-content: space-between;
@@ -450,7 +371,7 @@ footer p{
     margin: 0;
     
     font-size: 1.08rem;
-    color: white;
+    color: var(--primary-gray);
 }
 
 footer a{
@@ -476,8 +397,9 @@ footer div img{
 /*Dinamic change above a tablet*/
 
 @media (min-width: 768px) {
-    #hero h1{
-        font-size: xx-large;
+    .banner-container h1{
+        font-size: 45px;
+        width: 100%;
     }
 
     /* Dots carousel */
@@ -503,7 +425,7 @@ footer div img{
     .card{
         margin: 0 0 2rem 0;
         flex: 2;
-        
+        height: auto;
     }
     .card img{
         width: 100%;
@@ -511,8 +433,7 @@ footer div img{
     
     /* APOYO */
     #apoyo{
-        padding-left: 30%;
-        padding-right: 30%;
+        padding: 10rem 8rem;
     }
 
     /*FOOTER*/
@@ -533,8 +454,9 @@ footer div img{
     }
 
     .mediumCard h1{
+        margin: 4rem 0rem 2rem 0rem;
         font-size: xx-large;
-        font-size: 3em;
+        /*font-size: 3em;*/
     }
 
     /* Dots carousel */
@@ -592,7 +514,8 @@ footer div img{
 
     #nav-menu li{
         margin-bottom: 0;
-
+        font-size: large;
+        
     }
 
     #nav-menu ul > :nth-child(1){
@@ -625,5 +548,13 @@ footer div img{
     #apoyoBtn img{
         width: 1rem;
         margin: 0;
+    }
+}
+
+
+@media (min-width: 1400px){
+    .banner-container h1{
+        font-size: 55px;
+        width: 100%;
     }
 }

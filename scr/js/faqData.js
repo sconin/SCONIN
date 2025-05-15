@@ -1,24 +1,30 @@
 const faqs = [
     { 
-        question: "¿Puedo tener su servicio?",
-        answer: "Aunque no es nuestro objetivo principal, sí estamos abiertos a participar en proyectos externos. Puedes contactarnos y compartir tus inquietudes para agendar una charla donde comentaremos todos los detalles pertinentes sobre el proyecto en cuestión y si todo está en orden haremos un presupuesto."
+        question: "¿Por qué tienen obras gratuitas?",
+        answer: `<p>Consideramos que es la mejor manera para conocer y disfrutar lo que hacemos.<br><br>Si quieres apoyarnos para seguir creando, puedes donar<a class="nav-link" href="apoyo" data-navigo> aquí.</a></p>`
     },
     { 
-        question: "¿Cómo puedo aprender a hacer obras como ustedes?",
-        answer: "Recomendamos estudiar a profundidad todos los aspectos que conforman a las obras artísticas. Algunos libros que recomendamos leer son El Arte de la Escritura Dramática y Entender el Cómic."
-    },
-    { 
-        question: "¿Por qué necesitan donaciones?",
-        answer: "Debido a nuestro interés primordial de compartir obras accesibles, nuestra estrategia es crear obras modestas que supongan un costo mínimo para las personas, de manera que para las obras más pequeñas es incluso nulo. Así que para seguir creando sin arriesgar nuestra sobrevivencia al máximo hemos decidido promover las donaciones voluntarias."
+        question: "¿Cuándo terminará El Microbusero 2?",
+        answer: "<p>No tenemos una fecha exacta.<br><br>Ya que esta obra consta de muchos episodios hemos decidido alternarla junto a otras obras más pequeñas, así que su publicación es irregular. Nosotros también esperamos con ansias llegar a su final.</p>"
     },
     { 
         question: "¿Puedo colaborar con ustedes?",
-        answer: "Claro que sí. Contáctanos y podremos charlar sobre la posibilidad de colaborar. Sólo recuerda que somos personas que tienen vidas independientes y qué queremos gastar nuestro tiempo en trabajos que consideremos valiosos en su contenido. Si no estás seguro por sí solo de que valga la pena comprometerte tú mismo, por favor ahorranos el tiempo de charlar contigo."
+        answer: `<p>Sí.<br><br>Solo recuerda que somos personas con vidas independientes y nos gusta invertir nuestro tiempo en proyectos que nos parezcan valiosas. Considéralo antes de escribirnos.</p>`
+    },
+    { 
+        question: "¿Qué recomiendan para crear obras?",
+        answer: `<p>Estudiar y practicar a profundidad los aspectos de cada oficio artístico en el que te quieres desempeñar (narrativa, imagen, interactividad, etc.).<br><br>Estos son algunos libros que consideramos guías importantes:<br><br></p>
+        <ul>
+            <li><i>El Arte de la Escritura Dramática – Lajos Egri (1941).</i></li>
+            <li><i>Hacer Cómics – Scott McCloud (2012).</i></li>
+            <li><i>On Game Design – Chris Crawford (2003).</i></li>
+        </ul>
+        `
     },
     {
-        question: "¿Cuándo acabará Eliab y el Círculo del Juego?",
-        answer: "No tenemos una fecha exacta. Debido al tamaño de esta obra hemos decidido alternar los episodios junto a otras obras más pequeñas, por lo cual su publicación es irregular. Nosotros también esperamos con mucha emoción llegar a su final."
-    }
+        question: "¿Ofrecen servicios de creación artística?",
+        answer: `<p>Claro. Tenemos experiencia haciendo historias, personajes, cómic, animación y videojuegos.<br><br>Si necesitas apoyo en cualquiera de estas áreas, ya sea desde una asesoría hasta la creación de tu proyecto, contáctanos para platicar sobre lo que tienes en mente.</p>`
+    }, 
 ];
 
 export default faqs;

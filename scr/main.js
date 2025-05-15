@@ -1,13 +1,12 @@
 import Navigo from "navigo";
 import initiCards from "./js/cards";
 import carouselChangeImg from "./js/carouselSizeImg";
-import { setProgressBar, startFillBar, setTimer, restartBar } from "./js/progressBar";
 import { loadHTML } from "./js/loader";
-import { carouselConfig, simpleCarousel } from "./js/crouselUtils";
+import { simpleCarousel } from "./js/crouselUtils";
 import { initFaq } from "./js/faqs";
 
 // NVIGATION APP
-const router = new Navigo('/', {hash: false, noMatchWarning: true});
+const router = new Navigo('/SCONIN', {hash: false, noMatchWarning: true});
 const appElement = document.getElementById('app');
 
 router.on({
@@ -16,15 +15,8 @@ router.on({
         .then( ()=>{    
             initiCards();
             
-            $('.carousel').slick(carouselConfig);
-            
             window.addEventListener('resize', carouselChangeImg);
             carouselChangeImg();
-
-            setProgressBar();
-            const carousel = document.querySelector('.carousel');
-            setTimer(carousel);
-            startFillBar();
             
             const goToTopLink = document.getElementById("goToTop");
             if (goToTopLink){
@@ -74,15 +66,6 @@ window.addEventListener("load", ()=>{
         if (loading) {
             //loading screen
             loading.style.display = 'none';
-            //start carousel bar
-            
-            if ( document.querySelector('.carousel') ){ 
-                restartBar();
-            }
         }
     }, 1000);  
 })
-
-
-
-
